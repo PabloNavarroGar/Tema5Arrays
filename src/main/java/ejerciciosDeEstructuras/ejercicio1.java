@@ -23,13 +23,16 @@ public class ejercicio1 {
             //mira el 0, i valdra 0 e ira sumando
             System.out.print(" - "+numeros[i]);
             
-            int suma=0;
-        
-            suma+=numeros[i];
             
-            System.out.println(suma);
+            
+         
         }
-
+        System.out.println("\n");
+         int suma=0;
+         
+         suma = numeros[0]+numeros[1]+numeros[2]+numeros[3]+numeros[4]+numeros[5];
+         
+         System.out.println("Suma de los array"+suma);
        
     }
 
