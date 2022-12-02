@@ -19,31 +19,91 @@ public class ejercicio2 {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        /*Escribe un programa para leer la altura de un número determinado de personas
-        y calcular la altura media. El número de personas se pide por teclado y debe ser
-        entero un entero mayor que cero. Posteriormente el programa irá pidiendo la altura,
-        en cm, de cada una de las personas y las guardará en una estructura de almacenamiento.
-        Si la altura leída no es positiva, el programa la pasará a número positivo. También es
-        necesario saber cuántas personas tienen una altura superior a la media e inferior a la media. 
-         */
-  
-        
-        
-        /*Systemout(indicar numeros de personas)
-        numeroPersonas=metodoleerenterosinerroresScanner
-        int[] alturasdeCadaPersonas = new int[numeroPersonas]
-        
-        for(int=0;i<numeroPersonas;i++){
-        Para que salga numero persona 1 2 3, (i+1)
-        
-        }*/
+      
+        //variables
+        int numeroPersonas;
+        int alturaPersonas;
+        int alturaMedia;
+        int contadorPorEncimaDeLaMedia = 0;
+        int contadorPorDebajoDeLaMedia = 0;
+        //Varibales junto con los metodos
+        numeroPersonas = pedirNumeroPersonas();
+        //alturaPersonas = pedirAlturaPersonas();
+
+        //Instacia de la matriz con para pedir sus datos
+        int[] alturasDeCadaPersona = new int[numeroPersonas];
+        for (int i = 0; i < alturasDeCadaPersona.length; i++) {
+
+            Scanner teclado = new Scanner(System.in);
+
+            // Se pone dentro del bloque try la sentencia que puede producir 
+            // el error
+            do {
+                System.out.println("Introduzca altura de la persona " + (i + 1));
+                //en ecaner se iguala con la matriz en este punto
+                alturasDeCadaPersona[i] = Math.abs(teclado.nextInt());
+                try {
+
+                    // La calificación es válida. Imprimo y salgo del bucle
+                    break;
+                } catch (InputMismatchException ime) {
+                    // En caso de error
+                    System.out.println("No es un numero entero");
+                    // Limpieza del buffer
+                    teclado.nextLine();
+                }
+
+            } while (true);
+            //Se imprime el mensaje con las alturas de cada persona
+            System.out.println("Altura de la persona " + (i + 1) + " es de " + alturasDeCadaPersona[i] + " centímetros");
+
+        }
+        System.out.println("-----------Array con los datos puestos------------------");
+        System.out.println(" ");
+        //Tamaño del array con los datos puestos y suma de alturas
+        int sumaDeAlturas = 0;
+        int alturas = 0;
+        for (int i = 0; i < alturasDeCadaPersona.length; i++) {
+            alturas = alturasDeCadaPersona[i];
+
+            System.out.println(" Altura persona numero " + (i + 1) + " = " + alturas);
+            sumaDeAlturas += alturasDeCadaPersona[i];
+        }
+        //Suma de las alturas 
+
+        System.out.println("Para poder hacer la media sumo todas las alturas y la guardo en una variable "
+                + "en total la suma de las medidas del array es de : " + sumaDeAlturas);
+
+        //Hacemos la media
+        alturaMedia = sumaDeAlturas / numeroPersonas;
+        //Imprimimos la altura media
+        System.out.println("La altura media es de :" + alturaMedia);
+
+        System.out.println("\n");
+        //Cuántas personas tienen una altura superior a la media e inferior a la media.
+        System.out.println("------------Comparacion media-----------------");
+        //Aqui hago otro for, el cual le tomo dentro de un if la lacula de cada
+        //persona y si es mejor a la media, se le suma 1 punto al contrador si no al otro
+        for (int i = 0; i < alturasDeCadaPersona.length; i++) {
+            
+
+            if (alturaMedia < alturasDeCadaPersona[i]) {
+                contadorPorDebajoDeLaMedia++;
+
+            } else {
+                contadorPorEncimaDeLaMedia++;
+            }
+
+        }
+        System.out.println(" Solo " + contadorPorEncimaDeLaMedia + " estan por encima de la media");
+
+        System.out.println(" Solo " + contadorPorDebajoDeLaMedia + " estan por debajo de la media");
+
     }
-    
-    
-    
-     public static int pedirNumeroPersonas() {
-         Scanner teclado = new Scanner(System.in);
-        int numeroPersonas=0;
+
+    public static int pedirNumeroPersonas() {
+        Scanner teclado = new Scanner(System.in);
+        int numeroPersonas = 0;
 
         // Se pone dentro del bloque try la sentencia que puede producir 
         // el error
