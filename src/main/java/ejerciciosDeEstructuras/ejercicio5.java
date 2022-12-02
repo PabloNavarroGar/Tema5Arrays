@@ -17,23 +17,16 @@ public class ejercicio5 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int [] enteros=null;
-       
+        int[] enteros = null;
+        
         arrayEnteros(enteros);
 
     }
-
-//    Implementa un programa que guarde en un array 10 números enteros que se 
-//    leen por teclado.A continuación se recorre el array y calcula el número 
-//    total de positivos , de negativos y de ceros
-//    . Calcula y muestra la media aritmética de los valores positivos y la de los 
-//    valores negativos del array
-//    . Implementar métodos para
-//Leer valores por teclado y almacenarlos en el array.
-//Se le pasará el array como parámetro y no devolverá nada.
+    
+    
+    
     public static void arrayEnteros(int[] enteros) {
         Scanner teclado = new Scanner(System.in);
-        int numeros = 0;
         //Con este bucle for para arrays, por cada entero del indice 
         for (int i = 0; i < enteros.length; i++) {
             enteros[i] = teclado.nextInt();
@@ -42,9 +35,9 @@ public class ejercicio5 {
 
         boolean repetir = true;
         do {
-            System.out.println("Introduce el número entero ");
+            System.out.println("Introduce el número entero " );
             try {
-                numeros = teclado.nextInt();
+                teclado.nextInt();
                 // La calificación es válida. Imprimo y salgo del bucle
 
                 repetir = false;
