@@ -42,7 +42,8 @@ public class Tema5estructuras {
         //foreach(izquierda recibe el dato es cuestion
         //parte derecha la estructura de datos(numeros)
         //Va iterando desde la posicion 0 en aux y entra en bucle
-        
+        //Debe de ser numero enteros
+        //Nunca debo de usar indices en el foreach
         for(int aux:numeros){
             System.out.print(" - " +aux);
         }

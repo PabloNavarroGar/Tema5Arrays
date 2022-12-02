@@ -26,39 +26,42 @@ public class ejercicio2 {
         Si la altura leída no es positiva, el programa la pasará a número positivo. También es
         necesario saber cuántas personas tienen una altura superior a la media e inferior a la media. 
          */
-        Scanner teclado = new Scanner(System.in);
-        
-        int [] media ={};
-        for (int i = 0; i < 5; i++) {
-            int altura = 0;
-           
-            
-            //si no es positivo, lo pasa a positivo
-            altura = Math.abs(altura);
-            do {
-                try {
-
-                    System.out.println("Introduce altura de la persona, en centimetros ");
-
-                    altura = teclado.nextInt();
-
-                    break;
-                } catch (InputMismatchException ime) {
-                    System.out.println("Dato Invalido,vuelva a introducirlo");
-                    teclado.nextLine();
-                }
-            } while (altura > 0);
-
-        }
+  
         
         
-         //foreach(izquierda recibe el dato es cuestion
-        //parte derecha la estructura de datos(numeros)
-        //Va iterando desde la posicion 0 en aux y entra en bucle
+        /*Systemout(indicar numeros de personas)
+        numeroPersonas=metodoleerenterosinerroresScanner
+        int[] alturasdeCadaPersonas = new int[numeroPersonas]
         
-        for(int altura:media){
-            System.out.print(" - " +altura);
-        }
+        for(int=0;i<numeroPersonas;i++){
+        Para que salga numero persona 1 2 3, (i+1)
+        
+        }*/
+    }
+    
+    
+    
+     public static int pedirNumeroPersonas() {
+         Scanner teclado = new Scanner(System.in);
+        int numeroPersonas=0;
+
+        // Se pone dentro del bloque try la sentencia que puede producir 
+        // el error
+        do {
+            System.out.println("Introduce el numero de personas que iran al array");
+            try {
+                numeroPersonas = teclado.nextInt();
+                // La calificación es válida. Imprimo y salgo del bucle
+
+                break;
+            } catch (InputMismatchException ime) {
+                // En caso de error
+                System.out.println("No es un numero entero");
+                // Limpieza del buffer
+                teclado.nextLine();
+            }
+        } while (true);
+        return numeroPersonas;
 
     }
 
