@@ -21,6 +21,7 @@ public class ejercicio5 {
         int[] enteros = new int[10];
 
         //LLamo el metodo con el array del main, para que se muestre en pantalla
+        // e introduzca los numeros.
         arrayEnteros(enteros);
 
         //bucle for que muestra el array con todos sus numeros puestos en pantalla
