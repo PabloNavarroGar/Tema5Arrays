@@ -17,38 +17,160 @@ public class ejercicio5 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] enteros = null;
-        
+        //Variables
+        int[] enteros = new int[10];
+
+        //LLamo el metodo con el array del main, para que se muestre en pantalla
         arrayEnteros(enteros);
 
+        //bucle for que muestra el array con todos sus numeros puestos en pantalla
+        System.out.println("------Array-------");
+
+        mostrarArray(enteros);
+
+        System.out.print("\n------------------");
+        //Se llama el metodo con el array en parametros
+        System.out.println(" ");
+        //Metodo que llama al los numeros positivos
+        numeroPositivos(enteros);
+
+        System.out.println("-------------");
+        //Metodo que llama a los numeros negativos
+
+        numeroNegativos(enteros);
+
+        System.out.println("-------------");
+
+        numeroDeCeros(enteros);
+
+        System.out.println("--------------");
+        //Media de los positivos
+        mediaPositivos(enteros);
+
+        System.out.println("-------------");
+
+        mediaNegativos(enteros);
     }
-    
-    
-    
+
     public static void arrayEnteros(int[] enteros) {
         Scanner teclado = new Scanner(System.in);
         //Con este bucle for para arrays, por cada entero del indice 
         for (int i = 0; i < enteros.length; i++) {
-            enteros[i] = teclado.nextInt();
+
+            boolean repetir = true;
+            do {
+                System.out.println("Introduce el número entero " + (i + 1));
+
+                enteros[i] = teclado.nextInt();
+                try {
+
+                    // La calificación es válida. Imprimo y salgo del bucle
+                    repetir = false;
+                } catch (InputMismatchException ime) {
+                    // En caso de error
+                    System.out.println("No es un numero entero");
+                    // Limpieza del buffer
+                    teclado.nextLine();
+                }
+            } while (repetir);
 
         }
 
-        boolean repetir = true;
-        do {
-            System.out.println("Introduce el número entero " );
-            try {
-                teclado.nextInt();
-                // La calificación es válida. Imprimo y salgo del bucle
+    }
 
-                repetir = false;
-            } catch (InputMismatchException ime) {
-                // En caso de error
-                System.out.println("No es un numero entero");
-                // Limpieza del buffer
-                teclado.nextLine();
+    public static int numeroPositivos(int[] enteros) {
+        int positivos = 0;
+        //Declaramos los positivos
+        for (int i = 0; i < enteros.length; i++) {
+            //MUY importante comparar los numeros del array con su indice, 
+            //si el numero del indice es mayor a 0 es positivo
+            if (enteros[i] > 0) {
+                positivos++;
             }
-        } while (repetir);
+
+        }
+
+        System.out.println("Hay un total de  " + positivos + " positivos  en el array");
+
+        return positivos;
+    }
+
+    public static int numeroNegativos(int[] enteros) {
+        int negativos = 0;
+        //Declaramos los positivos
+        for (int i = 0; i < enteros.length; i++) {
+            //MUY importante comparar los numeros del array con su indice, 
+            //si el numero del indice es mayor a 0 es positivo
+            if (enteros[i] < 0) {
+                negativos++;
+            }
+
+        }
+        //salida de datos
+        System.out.println("Hay un total de  " + negativos + " negativos  en el array");
+
+        return negativos;
+    }
+
+    public static int numeroDeCeros(int[] enteros) {
+        int ceros = 0;
+        //Declaramos los positivos
+        for (int i = 0; i < enteros.length; i++) {
+            //MUY importante comparar los numeros del array con su indice, 
+            //si el numero del indice es mayor a 0 es positivo
+            if (enteros[i] == 0) {
+                ceros++;
+            }
+
+        }
+        //Salida de datos
+        System.out.println("Hay un total de  " + ceros + " ceros  en el array");
+
+        return ceros;
+    }
+
+    public static void mostrarArray(int[] enteros) {
+        int indiceArray = 0;
+        //Creamos el for para que vaya leyendo desde el indice 0 todos los
+        //numeros y luego dentro del for hacemos la salida de datos
+        for (int i = 0; i < enteros.length; i++) {
+            indiceArray = enteros[i];
+            //Salida de datos
+
+            System.out.print(indiceArray + "  ");
+        }
 
     }
 
+    public static void mediaPositivos(int[] enteros) {
+
+        double mediaPositivos;
+        int sumaPositivos = 0;
+        //Metemos el metodo de los numeros positivos para que tome el valor del metodo
+        int positivos = numeroPositivos(enteros);
+        //Se sumas los positivos
+        sumaPositivos += positivos;
+
+        //hacemos la media
+        mediaPositivos = sumaPositivos / positivos;
+        //salida de datos
+        System.out.println("La media de los positivos es de = " + mediaPositivos);
+
+    }
+
+    public static void mediaNegativos(int[] enteros) {
+
+        double mediaNegativos;
+        int sumaNegativos = 0;
+        //Metemos el metodo de los numeros negativos para que tome el valor del metodo
+        int negativos = numeroNegativos(enteros);
+
+        sumaNegativos += negativos;
+
+        //hacemos la media
+        mediaNegativos = sumaNegativos / negativos;
+        //salida de datos
+        System.out.println("La media de los positivos es de = " + mediaNegativos);
+
+    }
 }
