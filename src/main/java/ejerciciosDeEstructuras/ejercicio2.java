@@ -22,7 +22,7 @@ public class ejercicio2 {
       
         //variables
         int numeroPersonas;
-        int alturaPersonas;
+        
         int alturaMedia;
         int contadorPorEncimaDeLaMedia = 0;
         int contadorPorDebajoDeLaMedia = 0;

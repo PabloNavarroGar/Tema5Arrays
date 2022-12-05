@@ -5,6 +5,8 @@
 
 package Apuntes;
 
+import java.util.Arrays;
+
 /**
  *
  * @author pablo
@@ -15,8 +17,17 @@ public class Tema5estructuras {
         System.out.println("Hello World!");
         
          int [] numeros = {1,2,3,4,5,6,7,8,9,10,11,12};
-        
-        
+         int pos= busquedaSecuencial(numeros, 10);
+         busquedaSecuencial(numeros, 6);
+         System.out.println("El numero se encuentra en la posicion " + pos);
+         pos= busquedaSecuencial(numeros, 6);
+         
+         //BUSQUEDA BINARIA
+         int posicion= Arrays.binarySearch(numeros, 5);
+         
+         System.out.println("La posicion del 5 es la = " +posicion);
+         
+          System.out.println("El numero se encuentra en la posicion " + pos);
         System.out.println("Elemento  indice 5 : " +numeros[5]);
         //Puedo recorreer cualquier elemento dentro del rango 0 y numeros.length -1
         //System.out.println("Elemento indice -1 "+numeros[12]);
@@ -57,6 +68,29 @@ public class Tema5estructuras {
             //mira el 0, i valdra 0 e ira sumando
             System.out.print("-"+numeros[i]);
         }
+        
+    }
+    
+    
+    public static int busquedaSecuencial(int [] array,int numeroBuscar){
+        int indice = -1;
+        //Recorremos el array completo
+        
+        for (int i = 0; i < array.length; i++) {
+            if (numeroBuscar == array[i]){ //Lo he encontrado
+                
+                indice = i;//Garda la posicion para devoverla
+                
+                break;//Hacemos un break, para cuando salga poor primera vez se salga
+                
+                
+            }
+                
+                
+            
+        }
+        
+        return indice;
         
     }
 }

@@ -4,6 +4,8 @@
  */
 package ejerciciosDeEstructuras;
 
+import java.util.Arrays;
+
 /**
  *
  * @author samue
@@ -15,38 +17,29 @@ public class ejercicio3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
-        double [] array1 = new double [20];
-        
+        //Creacion del array
+        double[] array1 = new double[20];
+
         for (int i = 0; i < array1.length; i++) {
-            double valorArray = array1[i];
-            valorArray= 7.5;
-            
-            System.out.println(valorArray);
+            Arrays.fill(array1, 7.5);
+            double d = array1[i];
+
+            System.out.print(" - " + d);
+
         }
-        
+
+        System.out.println("\n--------------------------------");
         System.out.println("--------------------------------");
-        System.out.println("--------------------------------");
-        
-         double [] array2 = new double [20];
-        
-        for (int i = 0; i < array1.length; i++) {
-            double valorArray = array2[i];
-            valorArray= 7.5;
-            
-            System.out.println(valorArray);
+
+        double[] array2 = new double[20];
+
+        for (int i = 0; i < array2.length; i++) {
+            Arrays.fill(array2, 7.5);
+            double d = array2[i];
+
+            System.out.print(" - " + d);
+
         }
-       
-        array1[5]= 6.3;
-        
-        for(double aux:array1){
-            System.out.print(" - " +aux);
-        }
-        
-        System.out.println("\n");
-       for(double aux:array2){
-            System.out.print(" - " +aux);
-        }
+
     }
-    
 }

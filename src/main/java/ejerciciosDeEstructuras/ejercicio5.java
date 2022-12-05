@@ -18,15 +18,17 @@ public class ejercicio5 {
      */
     public static void main(String[] args) {
         //Variables
+        //Array creado e inicializado con 10 casillas, el nombre del array, va
+        //dentro de los metodos que tienen como parametro el array
         int[] enteros = new int[10];
 
-        //LLamo el metodo con el array del main, para que se muestre en pantalla
+        //LLamo el metodo con el array del creado en el  main, para que se muestre
         // e introduzca los numeros.
         arrayEnteros(enteros);
 
-        //bucle for que muestra el array con todos sus numeros puestos en pantalla
+        
         System.out.println("------Array-------");
-
+        //Se muestra el array llamando al metodo
         mostrarArray(enteros);
 
         System.out.print("\n------------------");
@@ -55,7 +57,8 @@ public class ejercicio5 {
 
     public static void arrayEnteros(int[] enteros) {
         Scanner teclado = new Scanner(System.in);
-        //Con este bucle for para arrays, por cada entero del indice 
+        //Con este bucle for para arrays, por cada entero del indice , se va introduciendo
+        //la cantidad que hemos señalado en el main, en este caso 10 numeros
         for (int i = 0; i < enteros.length; i++) {
 
             boolean repetir = true;
@@ -147,14 +150,15 @@ public class ejercicio5 {
 
         double mediaPositivos;
         int sumaPositivos = 0;
-        //Metemos el metodo de los numeros positivos para que tome el valor del metodo
+        //Metemos el metodo de los numeros positivos para que tome la cantidad 
+        //de positivos que hemos puesto en el array
         int positivos = numeroPositivos(enteros);
-        //Se sumas los positivos
+        //Se sumam los positivos
         sumaPositivos += positivos;
 
-        //hacemos la media
+        //Hacemos la media
         mediaPositivos = sumaPositivos / positivos;
-        //salida de datos
+        //Salida de datos
         System.out.println("La media de los positivos es de = " + mediaPositivos);
 
     }
@@ -163,14 +167,15 @@ public class ejercicio5 {
 
         double mediaNegativos;
         int sumaNegativos = 0;
-        //Metemos el metodo de los numeros negativos para que tome el valor del metodo
+        //Metemos el metodo de los numeros negativos para que tome la cantidad 
+        //de positivos que ehmos puesto en el array
         int negativos = numeroNegativos(enteros);
 
         sumaNegativos += negativos;
 
-        //hacemos la media
+        //Hacemos la media
         mediaNegativos = sumaNegativos / negativos;
-        //salida de datos
+        //Salida de datos
         System.out.println("La media de los positivos es de = " + mediaNegativos);
 
     }
