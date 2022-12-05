@@ -38,6 +38,7 @@ public class ejercicio6 {
         System.out.println("¿El igual el array 1 y 1? " + compararArrays2(array1, array1));
         System.out.println("¿El igual el array 1 y 2? " + compararArrays2(array2, array1));
          System.out.println(" ¿El array 1 es igual al 3? " + compararArrays2(array1, array3));
+         //hola
 
     }
 
