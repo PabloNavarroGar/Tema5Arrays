@@ -21,7 +21,7 @@ public class ejercicio6 {
         int[] array1 = {1, 2, 3};
         int[] array2 = {1, 2, 3, 4};
         int[] array3 = {1, 2, 2};
-        boolean comparativa;
+       
         //Comparando con la clase Arrays
 
         // Probarlo con los arrays [1,2,3] y [1,2,3],   [1,2,3] y [1,2,2].
