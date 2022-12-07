@@ -25,6 +25,8 @@ public class ejercicio6 {
         //Comparando con la clase Arrays
 
         // Probarlo con los arrays [1,2,3] y [1,2,3],   [1,2,3] y [1,2,2].
+        //Usando clase Arrays.
+        System.out.println("-------------Clase Arrays----------------´-");
         System.out.println("¿El igual el array 1 y 1? " + Arrays.equals(array1, array1));
 
         //[1,2,3,4] y [1,2,3]
@@ -33,6 +35,7 @@ public class ejercicio6 {
         // [1,2,3] y [1,2,2]
         System.out.println(" ¿El array 1 es igual al 3? " + Arrays.equals(array1, array3));
 
+        //Usando el metodo
         System.out.println("-----------Comparativa con el metodo----------------");
 
         System.out.println("¿El igual el array 1 y 1? " + compararArrays2(array1, array1));
@@ -43,7 +46,7 @@ public class ejercicio6 {
     }
 
    
-
+    //Metodo comprara Arrays con metodo booleano
     public static boolean compararArrays2(int[] a1, int[] a2) {
         boolean resultado = true;
         for (int i = 0; i < a1.length; i++) {
@@ -53,9 +56,10 @@ public class ejercicio6 {
                 } else{
                     resultado = false;
                 }
-                 //Rompe la iteración puesto que, si determinó que un dato se repite, no es necesario seguir comparando.   
+                  
             }
         }
+        //develve un resultado sera true o false
         return resultado;
 
     }

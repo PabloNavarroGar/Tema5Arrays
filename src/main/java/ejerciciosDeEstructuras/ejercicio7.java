@@ -94,7 +94,7 @@ public class ejercicio7 {
         return numeroArray;
 
     }
-//metodo para imprimir el Array
+//metodo para imprimir el Array , void, ya que no devuelve nada slo muestra
    public static void imprimirArray (int arrayAux[]){
         for(int i=0;i<arrayAux.length;i++){
             System.out.println(arrayAux[i]+"-");
@@ -104,21 +104,9 @@ public class ejercicio7 {
    
    
    
-   public static void multiplicarArrays(int [] a1, int [] a2){
-    
+   public static int multiplicarArrays(int [] a1, int [] a2){
+     int[] arrayFinal = new int[a1.length];
        
-       for (int i = 0; i < a1.length; i++) {
-           int j = a1[i]*2;
-           
-           
-           
-       }
-       
-        for (int i = 0; i < a2.length; i++) {
-           int j = a2[i]*2;
-           
-           
-           
-       }
+     
    }
 }
