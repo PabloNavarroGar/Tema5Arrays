@@ -59,8 +59,7 @@ public class ejercicio7 {
         
         System.out.println("Multiplicacion de los arrays");
         
-        multiplicarArrays(array1, array2);
-        
+     
         
         imprimirArray(array1);
         
@@ -104,9 +103,5 @@ public class ejercicio7 {
    
    
    
-   public static int multiplicarArrays(int [] a1, int [] a2){
-     int[] arrayFinal = new int[a1.length];
-       
-     
-   }
+   
 }
