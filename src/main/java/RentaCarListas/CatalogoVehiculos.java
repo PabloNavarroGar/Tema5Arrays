@@ -101,7 +101,7 @@ public class CatalogoVehiculos {
             //Lanzar una expecion
             //Hacemos un tostring del objeto 'v' 
             tmp += v.toString() + "\n";
-
+        
         }
         return tmp;
     }
