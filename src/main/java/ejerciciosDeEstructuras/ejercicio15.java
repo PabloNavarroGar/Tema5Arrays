@@ -18,11 +18,12 @@ public class ejercicio15 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        boolean[] arrayCaraCruz = new boolean[10];
-
+        boolean[] arrayCaraCruz = new boolean[1000];
+        
         rellenarArray(arrayCaraCruz);
 
-        System.out.println("Hay un total de  " + numeroDeCaras(arrayCaraCruz) + " caras en el Array");
+        //Falta el metodo para imprimir el resultado
+        System.out.println("Hay un total de  " + numeroDeCaras(arrayCaraCruz)+ " caras en el Array");
 
         System.out.println("Hay un total de  " + numeroDeCruces(arrayCaraCruz) + " cruces en el Array");
 
@@ -30,33 +31,34 @@ public class ejercicio15 {
 
     public static void rellenarArray(boolean[] array) {
         Random random = new Random();
+        //Imprimia con el sout, hay que llamar al array con el iterador e igualarlo
         for (int i = 0; i < array.length; i++) {
-            System.out.println(random.nextBoolean());
+           array[i]=random.nextBoolean();//Rellenar el array con el random.nextboolean
         }
 
     }
-
+    //Metodo para que salgan las caras
     public static int numeroDeCaras(boolean[] array) {
         int contadorCaras = 0;
 
         for (int i = 0; i < array.length; i++) {
 
-            if (array[i] == true) {
+            if (array[i]) {//ASI SIGNIFICA QUE ES TRUE, VICO LO QUIERE ASI
                 contadorCaras++;
 
             }
-            
+
         }
 
         return contadorCaras;
     }
-
+    //Metodo para que salgan las cruces
     public static int numeroDeCruces(boolean[] array) {
         int contadorCruces = 0;
 
         for (int i = 0; i < array.length; i++) {
 
-            if (array[i] == false) {
+            if (!array[i] ) {//SIGNIFICA QUE ESO ES IUGALES A FALSO, HAY QUE HACERLO ASI
                 contadorCruces++;
 
             }

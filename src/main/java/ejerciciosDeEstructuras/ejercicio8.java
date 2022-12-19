@@ -57,13 +57,13 @@ public class ejercicio8 {
 
         }
         //For que usa el tamaño del array creado y volvemos a poner otro for adentro que recorra los numeros de adentro cambiandolos por la estrella
-        //NOTA: REPASAR PREGUNTAR QUE ME FALTA
+        //NOTA: REPASAR PREGUNTAR QUE ME FALTA para que salgan 
         for (int j = 0; j < arrayNumerosEnteros.length; j++) {
             int arrayNumerosEntero = arrayNumerosEnteros[j];
 
             for (int k = 0; k < arrayNumerosEntero; k++) {
 
-                System.out.println("*");
+                System.out.print("*");
                 
                
             }
