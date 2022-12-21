@@ -18,9 +18,9 @@ public class Cliente {
     private String nif;
     private static int contador = 0;
 
-    public Cliente(String nombre, String apellidos) {
-        this.nombre = nombre;
-        this.apellidos = apellidos;
+    public Cliente() {
+        this.nombre = RandomStringUtils.randomAlphabetic(3);
+        this.apellidos = RandomStringUtils.randomAlphabetic(3);;
         contador++;
         this.nif = String.valueOf(contador);
     }
@@ -33,8 +33,7 @@ public class Cliente {
 
     }
 
-    public Cliente() {
-    }
+   
     
     
 

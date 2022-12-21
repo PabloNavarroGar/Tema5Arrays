@@ -103,7 +103,7 @@ public class ListaReproduccion {
      
    public void ordenar1(ArrayList<Cancion> listaCancion){
        
-      Collections.sort(listaCancion);
+      Collections.sort(Array);
        
        
    } 
