@@ -4,7 +4,7 @@
  */
 package ejerciciosDeEstructuras;
 
-import RentaCarListas.Vehiculo;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.InputMismatchException;
@@ -66,9 +66,11 @@ public class ListaReproduccion {
 
     }
 
-    public void cambiarCancion(int numeroBuscar, Cancion c) {
-
-        this.lista.set(numeroBuscar, c);
+    public void cambiarCancion(int posicion, Cancion c) {
+        posicion = Math.abs(posicion);
+        if (posicion < this.lista.size() && posicion > -1) {
+            this.lista.set(posicion, c);
+        }
 
     }
 
@@ -76,35 +78,85 @@ public class ListaReproduccion {
         this.lista.add(c);
 
     }
+    //Elimminar cancion posicion
+    public boolean eliminarCancion(int posicion) {
+        if (posicion < this.lista.size() && posicion > -1) {
+            this.lista.remove(posicion);
+            return true;
+        }
+        return false;
+    }
+
+        //Eliminar objeto
+        public boolean eliminarCancion(Cancion c){
+            
+            return this.lista.remove(c);
+        }
+                
+    public static void imprimirLista(ListaReproduccion tmp) {
+        String texto = "";
+        int contadorCanciones = 0;
+        for (Cancion c : tmp.getLista()) {
+
+            texto += ++contadorCanciones + c.toString() + "\n";
+
+        }
+        System.out.println(texto);
+
+    }
+
+    public int buscarCancion(Cancion c) {
+
+        return this.lista.indexOf(c);
+
+    }
+    //Ordenar por titulo
+    public void ordenarListaTitulo() {
+
+        Collections.sort(this.lista,(c1,c2)->c1.getTitulo().compareToIgnoreCase(c2.getTitulo()));
+
+    }
+    //Ordenar por cantante
+    public void OrdenarListaConCollections() {
+        Collections.sort(this.lista,(c1,c2)->c1.getCantante().compareToIgnoreCase(c2.getCantante()));
+    }
+
+    //busqueda por titulo
     
-    public void eliminaCancion(int numeroBuscar){
+    public int buscarPorTitulo(String titulo){
         
-        this.lista.remove(numeroBuscar);
         
+        Cancion aux= new Cancion();
+        aux.setTitulo(titulo);
+        ordenarListaTitulo();
+        return Collections.binarySearch(this.lista, aux, (c1,c2)->c1.getTitulo().compareToIgnoreCase(c2.getTitulo()));
     }
     
-    public void eliminaCancion(Cancion c){
+    //Ordenar la duracion: Ordenar un numero decimal o entero, con 2 objetos
+    public void ordenarDuracion(){
         
-        this.lista.remove(c);
+        Collections.sort(this.lista,(c1,c2)->Double.compare(c1.getDuracion(),c2.getDuracion()));
     }
     
-    public void imprimirLista (ListaReproduccion tmp){
-        
-        this.lista.toString();
-        
-    }
     
-    public void buscarCancion(Cancion c){
-        
-        this.lista.indexOf(c);
-        
-        
+    
+    
+    
+    
+    
+    
+    
+    public List<Cancion> getLista() {
+        return lista;
     }
-     
-   public void ordenar1(ArrayList<Cancion> listaCancion){
-       
-      Collections.sort(Array);
-       
-       
-   } 
+
+    public void setLista(List<Cancion> lista) {
+        this.lista = lista;
+    }
+
+    @Override
+    public String toString() {
+        return "ListaReproduccion{" + "lista=" + lista + ", tamanio=" + tamanio + '}';
+    }
+
 }

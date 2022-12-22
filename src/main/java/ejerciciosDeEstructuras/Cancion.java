@@ -18,11 +18,9 @@ public class Cancion {
     String titulo;
     String cantante;
     String discografica;
-
+    private double duracion;
     public Cancion() {
-        this.titulo = RandomStringUtils.randomAlphabetic(3);
-        this.cantante = RandomStringUtils.randomAlphanumeric(1);
-        this.discografica = RandomStringUtils.randomAlphabetic(4);
+       
 
     }
 
@@ -32,7 +30,7 @@ public class Cancion {
         hash = 59 * hash + Objects.hashCode(this.titulo);
         hash = 59 * hash + Objects.hashCode(this.cantante);
         hash = 59 * hash + Objects.hashCode(this.discografica);
-
+        hash = 59 * hash + Objects.hashCode(this.duracion);
         return hash;
     }
 
@@ -48,6 +46,9 @@ public class Cancion {
             return false;
         }
         final Cancion other = (Cancion) obj;
+        if (this.duracion != other.duracion) {
+            return false;
+        }
         if (!Objects.equals(this.titulo, other.titulo)) {
             return false;
         }
@@ -56,6 +57,8 @@ public class Cancion {
         }
         return Objects.equals(this.discografica, other.discografica);
     }
+
+    
 
     public String getTitulo() {
         return titulo;
@@ -79,14 +82,17 @@ public class Cancion {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Cancion{");
-        sb.append("titulo=").append(titulo);
-        sb.append(", cantante=").append(cantante);
-        sb.append(", discografica=").append(discografica);
-
-        sb.append('}');
-        return sb.toString();
+        return "Cancion{" + "titulo=" + titulo + ", cantante=" + cantante + ", discografica=" + discografica + ", duracion=" + duracion + '}';
     }
+
+    public double getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
+    
 
 }
