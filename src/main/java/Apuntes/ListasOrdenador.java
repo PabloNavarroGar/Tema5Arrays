@@ -18,7 +18,7 @@ public class ListasOrdenador {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        //Crear el objeto Directo
         //List<Ordenador>lista= new ArrayList();
         
         //lista.add(new Ordenador("1","Intel",200,32));
@@ -39,6 +39,16 @@ public class ListasOrdenador {
         //Ordenar por ram
         //Collections.sort(lista, (o1,o2)-> 01.CantidadRAM().compareTo(o2.CantidadRAM()));
         
+        //lista.forEach(System.out::println)
+        
+        
+        //System.out.println("Busqueda binaria por memoria RAM");
+        
+        //Ordenador aux=new Ordenador("","",0,16);
+        
+        // int pos = Collections.binarySearch(lista, aux, (01.02)->01.cantidadRAM) - 02.cantidadRAM());
+        
+        //System.out.println("El ordenador de 16mb de Ram esta en la posicion "+pos);
     }
     
 }
