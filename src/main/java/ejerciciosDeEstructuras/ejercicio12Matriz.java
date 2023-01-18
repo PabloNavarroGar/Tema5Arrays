@@ -28,6 +28,7 @@ public class ejercicio12Matriz {
         
         int[][] ejemplo2 = matrizRellenadaConFor();
   
+       
     }
     
     //Declarar la matriz en el meotdo
@@ -73,7 +74,7 @@ public class ejercicio12Matriz {
        return arrayNumeros;
    }
        
-      
+  
    
     
 }
