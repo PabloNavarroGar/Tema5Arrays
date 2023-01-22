@@ -18,11 +18,11 @@ public class ejercicio19Avion {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
-        String[][] avionPablo = new String[25][4];//Declaro e inicio matri<
+        
+        String[][] avionPablo = new String[25][4];//Declaro e inicio matriz
         rellenarMatriz(avionPablo);//Rellenamos matriz
 
-        //Declaro Menu
+        //Menu de la aplicacion
         String menu = """
                     [1]-Ver Asientos del Avion
                     ------------------------
@@ -85,16 +85,17 @@ public class ejercicio19Avion {
     }
 
     public static String[][] rellenarMatriz2() {
-        String[][] matrizRellenada = new String[25][4];
-        String letra = "O";
+        String[][] matrizRellenada = new String[25][4];//Declaro e inicio la matriz que se pasara por
+        //El metodo
+        String letra = "O";//String que tendra la matriz.
         for (int i = 0; i < 10; i++) {
-
+            //Recorro la matriz
             for (int j = 0; j < matrizRellenada[i].length; j++) {
 
-                matrizRellenada[i][j] = letra;
+                matrizRellenada[i][j] = letra;//Introducimos la letra en las casillas
             }
         }
-        return matrizRellenada;
+        return matrizRellenada;//Devuelvo la matriz
     }
 
     public static String imprimirMatrizDelAvion(String[][] matrizPedir) {
@@ -103,17 +104,14 @@ public class ejercicio19Avion {
         for (int i = 0; i < matrizPedir.length; i++) {
             //Dentro del for para recorrer las 2 parte, le meto la [i]
             for (int j = 0; j < matrizPedir[i].length; j++) {
-
-                if (j != matrizPedir[i].length - 1) {
+                
+                //Se le suma la matriz
                     matrizAsientos += " [" + matrizPedir[i][j] + "] " + "   ";
 
-                } else {
-                    matrizAsientos += " |" + matrizPedir[i][j] + "| ";
-
-                }
+                
 
             }
-            //Salto de linea
+            //Salto de linea que se la sumara cada vez que recorra
             matrizAsientos += "\n";
         }
 
@@ -125,13 +123,12 @@ public class ejercicio19Avion {
         //Variable que tienen los numero sd ela fila y columna
         int fila = 0;
         int columna = 0;
-
+        //Metodo para introducir 2 enteros que seleccioaran una 1 y una columna
         fila = pedirNumeroEnteroJOptionRango(1, 25, "Introduce la fila donde esta el asiento");
         columna = pedirNumeroEnteroJOptionRango(1, 4, "Introduce la columna donde esta el asiento");
 
-        fila -= 1;//Para que no se sobresalga de la matriz
-        columna -= 1;
-        //condicion que si dada una casilla de la matriz, si tiene un X, sale un mensaje, si no, lo cambia a X de reservado
+       
+        //condicion que si dada una casilla de la matriz, si tiene un X, estara reservado y saldra un mensaje, si no, lo cambia a X de reservado
         if (matrizPedir[fila][columna].equals("X")) {
 
             JOptionPane.showMessageDialog(null, "El asiento ya  esta reservado, pruebe con otro");
@@ -143,7 +140,7 @@ public class ejercicio19Avion {
         }
     }
 
-    //Mismo proceso que reversar, pero invierto las letras
+    //Mismo proceso que reservar, pero invierto las letras
     public static void CancelarAsiento(String[][] matrizPedir) {
 
         //Variable que tienen los numero sd ela fila y columna
@@ -153,8 +150,7 @@ public class ejercicio19Avion {
         fila = pedirNumeroEnteroJOptionRango(1, 25, "Introduce la fila donde esta el asiento");
         columna = pedirNumeroEnteroJOptionRango(1, 4, "Introduce la columna donde esta el asiento");
 
-        //fila -= 1;//Para que no se sobresalga de la matriz
-        //columna -= 1;
+      
         //condicion que si dada una casilla de la matriz, si tiene un X, sale un mensaje, si no, lo cambia a X de reservado
         if (matrizPedir[fila][columna].equals("O")) {
 
