@@ -74,7 +74,7 @@ public class ejercicio19Avion {
     public static void rellenarMatriz(String[][] matrizPedir) {
         String[][] matrizRellenada = new String[25][4];
         String letra = "O";
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < matrizPedir.length; i++) {
 
             for (int j = 0; j < matrizPedir[i].length; j++) {
 
@@ -88,7 +88,7 @@ public class ejercicio19Avion {
         String[][] matrizRellenada = new String[25][4];//Declaro e inicio la matriz que se pasara por
         //El metodo
         String letra = "O";//String que tendra la matriz.
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < matrizRellenada.length; i++) {
             //Recorro la matriz
             for (int j = 0; j < matrizRellenada[i].length; j++) {
 

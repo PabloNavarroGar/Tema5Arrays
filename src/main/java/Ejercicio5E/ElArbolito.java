@@ -46,7 +46,7 @@ public class ElArbolito {
                 
                 if(numeroAux >= 0){
                     
-                    arbolMatriz[i][numeroAux + j] ="1";
+                    arbolMatriz[i][numeroAux+j] ="1";
                 }
                 
                 if(j + numeroAux == arbolMatriz[i].length -1 - numeroAux){

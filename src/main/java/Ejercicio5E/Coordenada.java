@@ -65,7 +65,7 @@ public class Coordenada {
     //To String
     @Override
     public String toString() {
-        return "Coordenada{" + "fila=" + fila + ", columna=" + columna + '}';
+        return "Coordenada{" + "fila=" + getFila() + ", columna=" +getColumna() + '}';
     }
     
     
