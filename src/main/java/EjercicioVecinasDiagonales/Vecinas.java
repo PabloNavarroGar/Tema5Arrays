@@ -18,11 +18,43 @@ public class Vecinas {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
+        //Variable 
+       
         int[][] matriz = matrizRellenadaConFor();//Matriz creada y rellenada con metodo
 
         imprimirMatriz(matriz);
 
+       
+        matriz = adyacentes(matriz.length, matriz[0].length, 0, 0);
+        System.out.println("3 posiciones");
+        
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println("");
+        }
+
+         matriz = adyacentes(matriz.length, matriz[0].length, 1, 0);
+ 
+        System.out.println("5 posiciones");
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println("");
+        }
+ 
+        matriz =adyacentes(matriz.length, matriz[0].length, 0, 0);
+ 
+        System.out.println("8 posiciones");
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println("");
+        }
     }
 
     public static int[][] matrizRellenadaConFor() {
@@ -61,15 +93,55 @@ public class Vecinas {
         }
 
     }
-    
-    public static int[][] adyacentes(int fila, int columna, int filaOrigen, int columnaOrigen){
-        
-        if(!(filaOrigen>=0 && filaOrigen <= fila -1 
-                && columnaOrigen >= 0 && columnaOrigen<= columna-1)){
-            
-            
-            
+
+    public static int[][] adyacentes(int fila, int columna, int filaOrigen, int columnaOrigen) {
+        //Esto significa que la fila y columna que voy a señalar esta DENTRO de la matriz
+        if (!(filaOrigen >= 0
+                && filaOrigen <= (fila - 1)
+                && columnaOrigen >= 0
+                && columnaOrigen <= (columna - 1))) {
+            return null;
         }
-        return null;
+        
+        int numPosiciones;//siempre van a ser 3 5 y 8 
+        //esto significa que solo puede ser en los caso anteriores
+        if (filaOrigen == 0 || filaOrigen == (fila - 1)) {
+            if (columnaOrigen == 0 || columnaOrigen == (columna - 1)) {
+                numPosiciones = 3;//Esto significa que estamos en las equina
+            } else {
+                numPosiciones = 5;//Si no es la sera 5
+            }
+        } else {
+            if (columnaOrigen == 0 || columnaOrigen == (columna - 1)) {
+                numPosiciones = 5;//Esta arlrededor de 5
+            } else {
+                numPosiciones = 8;
+            }
+        }
+        //Creamos la matriz
+        int[][] posiciones = new int[numPosiciones][2];
+        //Recorremos la matriz, -1-1 para empezar desde la 0 0
+        
+        int indicePosicion = 0;
+        for (int i = -1; i <= 1; i++) {
+            //Emperamos en -1 hasta el 1
+            for (int j = -1; j <= 1; j++) {
+                //Hay que evitar que ambos 0
+                if ((i != 0 || j != 0)
+                        && (filaOrigen + i) >= 0 
+                        && (filaOrigen + i) <= (fila - 1)//Se le esta diciendoq ue estes dentro de la matriz
+                        && (columnaOrigen + j) >= 0
+                        && (columnaOrigen + j) <= (columna - 1)) {
+                    posiciones[indicePosicion][0] = filaOrigen + i;
+                    posiciones[indicePosicion][1] = columnaOrigen + j;
+                    indicePosicion++;
+                }
+
+            }
+        }
+
+        return posiciones;
+
     }
+
 }
