@@ -26,10 +26,10 @@ public class MatrizDiagonal {
         imprimirMatriz(matrizDiagonal);
 
       
-        System.out.println("La diagonal principal es");
+        System.out.println("La diagonal principal es :");
         imprimirDiagonalPrincipal(matrizDiagonal);
         System.out.println("\n");
-        System.out.println("La diagonal secundaria es");
+        System.out.println("La diagonal secundaria es :");
                    
         imprimirDiagonalSecundaria(matrizDiagonal);
         

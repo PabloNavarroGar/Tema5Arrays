@@ -46,7 +46,7 @@ public class Vecinas {
             System.out.println("");
         }
  
-        matriz =adyacentes(matriz.length, matriz[0].length, 0, 0);
+        matriz =adyacentes(matriz.length, matriz[0].length, 1, 1);
  
         System.out.println("8 posiciones");
         for (int i = 0; i < matriz.length; i++) {
@@ -104,12 +104,12 @@ public class Vecinas {
         }
         
         int numPosiciones;//siempre van a ser 3 5 y 8 
-        //esto significa que solo puede ser en los caso anteriores
+        //esto significa que solo puede ser en los casos anteriores(3,5,8)
         if (filaOrigen == 0 || filaOrigen == (fila - 1)) {
             if (columnaOrigen == 0 || columnaOrigen == (columna - 1)) {
-                numPosiciones = 3;//Esto significa que estamos en las equina
+                numPosiciones = 3;//Esto significa que estamos en las esquinas de la matriz
             } else {
-                numPosiciones = 5;//Si no es la sera 5
+                numPosiciones = 5;//Si no es una esquina sera 5 posiciones
             }
         } else {
             if (columnaOrigen == 0 || columnaOrigen == (columna - 1)) {
@@ -129,7 +129,7 @@ public class Vecinas {
                 //Hay que evitar que ambos 0
                 if ((i != 0 || j != 0)
                         && (filaOrigen + i) >= 0 
-                        && (filaOrigen + i) <= (fila - 1)//Se le esta diciendoq ue estes dentro de la matriz
+                        && (filaOrigen + i) <= (fila - 1)//Se le esta diciendo que estes dentro de la matriz, toda esta condicion
                         && (columnaOrigen + j) >= 0
                         && (columnaOrigen + j) <= (columna - 1)) {
                     posiciones[indicePosicion][0] = filaOrigen + i;
