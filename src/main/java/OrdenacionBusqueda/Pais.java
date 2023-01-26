@@ -24,6 +24,11 @@ public class Pais implements Comparable<Pais> {
         this.moneda = moneda;
     }
 
+    public Pais() {
+    }
+
+    
+
     public String getNombre() {
         return nombre;
     }
@@ -86,6 +91,8 @@ public class Pais implements Comparable<Pais> {
     @Override
     public int compareTo(Pais o) {
        //Creado lo de comparator le quito lo que hay aqui adentro
+       //Cuando vaya a meter un pais, ira ordenado por su nombre,
+       //Alfabecicamente,
         return this.nombre.compareToIgnoreCase(o.nombre);
        
     
