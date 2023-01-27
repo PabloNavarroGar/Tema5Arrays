@@ -95,7 +95,7 @@ public class Soldado implements Comparable<Soldado> {
 
     @Override
     public int compareTo(Soldado o) {
-         return this.nif-o.getNif();
+         return Integer.compare(this.nif, o.getNif());
     }
 
    

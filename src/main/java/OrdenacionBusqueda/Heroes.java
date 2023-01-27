@@ -25,6 +25,10 @@ public class Heroes implements Comparable<Heroes> {
         this.tipoArma = tipoArma;
     }
 
+    public Heroes() {
+    }
+
+    
     public String getNombre() {
         return nombre;
     }

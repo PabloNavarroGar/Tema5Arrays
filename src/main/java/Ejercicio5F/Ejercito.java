@@ -16,7 +16,7 @@ import java.util.Set;
 public class Ejercito {
 
     private Set<Soldado> ejercito;//Importo la clase set, e introduzco dentro
-    //de klos corches la clase(Soldado) y compondra el ejercito
+    //de los corches la clase(Soldado) y compondra el ejercito
 
     public Ejercito() {
         this.ejercito = new HashSet<>();//Se introduce la clase HashSet en este punto
@@ -90,14 +90,14 @@ public class Ejercito {
 
         Soldado auxiliar = new Soldado();
         //declaracion de un objeto auxiliar para ponerle el nic
-     
+        auxiliar.setNif(nif);
         ejercito.remove(auxiliar);
 
     }
 
-    public void desalistarSoldado2(Soldado s) {
+    //public void desalistarSoldado2(int nif) {
 
-        ejercito.remove(s);
+        this.ejercito.remove(new Soldado(nif, "", "", ""));
 
     }
 
