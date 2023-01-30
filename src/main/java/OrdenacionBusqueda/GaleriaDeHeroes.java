@@ -111,7 +111,7 @@ public class GaleriaDeHeroes {
         Heroes objetoBuscar = new Heroes();
 
         objetoBuscar.setNombre("Zenyatta");//Lista ordenada por nombre
-
+        //Declaro int para la posicion
         int posicion = Collections.binarySearch(heroes, objetoBuscar);
 
         System.out.println("Zenyatta esta en la posicion " + posicion);

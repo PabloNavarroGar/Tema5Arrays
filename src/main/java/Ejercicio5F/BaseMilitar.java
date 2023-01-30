@@ -4,6 +4,7 @@
  */
 package Ejercicio5F;
 
+import ejerciciosDeEstructuras.ejercicio5;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -52,7 +53,7 @@ public class BaseMilitar {
 
             System.out.println("El ejercito tiene " + ejercito.miembrosDelEjercito() + "  soldado disponibles ");
         }
-        //Comprobamos si sale una condicion
+        //Comprobamos si sale condicion
 
         System.out.println("------------------");
 
@@ -76,9 +77,14 @@ public class BaseMilitar {
         //OJITO que HAY QUE IMPRIMIR EL EJERCITO  LLAMANDO A UN GET y luego un foreach
         //NO AL LISTA DE LOS SOLDADOS
         ejercito.getEjecito().forEach(System.out:: println);
-        
+        //Comprobamos ahora si se a restado el soldado que hemos quitado
         System.out.println("Ahora en el ejercito nos quedan " +ejercito.miembrosDelEjercito() +" soldados");
-
+        System.out.println("---------Mostrando ejercito con los metodos mostrar-----------------");
+        ejercito.mostrarEjercito1();
+        
+        System.out.println("-------------");
+        ejercito.mostrarEjercito2();
+        
     }
 
 }

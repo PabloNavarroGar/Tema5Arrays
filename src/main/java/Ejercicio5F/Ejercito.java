@@ -7,7 +7,9 @@ package Ejercicio5F;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
+import static java.util.Spliterators.iterator;
 
 /**
  *
@@ -16,11 +18,11 @@ import java.util.Set;
 public class Ejercito {
 
     private Set<Soldado> ejercito;//Importo la clase set, e introduzco dentro
-    //de los corches la clase(Soldado) y compondra el ejercito
+    //de klos corches la clase(Soldado) y compondra el ejercito
 
     public Ejercito() {
         this.ejercito = new HashSet<>();//Se introduce la clase HashSet en este punto
-        //Para evitar duplicaciones
+        //Para evitar duplicaciones con el nif
     }
 
     public void setEjercito(Set<Soldado> ejercito) {
@@ -85,7 +87,7 @@ public class Ejercito {
 
         return soldados; //devuelvo el array(soldados)
     }
-
+        //Metodo para borrar soldados(objetos)
     public void desalistarSoldado(int nif) {
 
         Soldado auxiliar = new Soldado();
@@ -94,11 +96,35 @@ public class Ejercito {
         ejercito.remove(auxiliar);
 
     }
-
-    //public void desalistarSoldado2(int nif) {
+    //2º metodo para borrar soldados 
+    public void desalistarSoldado2(int nif) {
 
         this.ejercito.remove(new Soldado(nif, "", "", ""));
 
     }
+    
+    public void mostrarEjercito1(){
+       //Esta usando un objeto de tipo iterator(iterador)
+       //Me permite recorrer colecciones
+        for(Soldado s : ejercito){
+            
+            System.out.println(s);
+        }
+        
+    }
+    
+    public void mostrarEjercito2(){
+        Iterator<Soldado> iterador = ejercito.iterator();
+        Soldado aux;
+        //Mientras alla elementos en el iterador se mostraran
+        while(iterador.hasNext()){
+            aux= iterador.next();
+            System.out.println(aux);
+        }
+        
+        
+    }
+    
+   
 
 }
