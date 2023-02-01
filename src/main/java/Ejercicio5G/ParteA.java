@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author pablo
  */
-public class Main {
+public class ParteA {
 
     /**
      * @param args the command line arguments
@@ -43,46 +43,41 @@ public class Main {
         System.out.println("------------------------");
 
         System.out.println("------------------------");
-        
+
         System.out.println("------Lista de palabras Españolas-----");
         ArrayList<String> espanoilas = diccionario.sacarPalabrasEspanolas();
 
         espanoilas.forEach(System.out::println);
-         System.out.println("------Lista de palabras Extranjeras-----");
+        System.out.println("------Lista de palabras Extranjeras-----");
         ArrayList<String> extranjeras = diccionario.sacarPalabrasExtranjeras();
         extranjeras.forEach(System.out::println);
         //extranjeras.forEach(System.out::println);
-        
-        
+
         System.out.println("--------------------");
-        
+
         //Borramos una palabra
-        
         System.out.println("Borrando una palabra");
-        
+
         System.out.println("Voy a borrar House");
-        
+
         diccionario.borrarPalabraExtranjera("House");
-        
-        
-       diccionario.imprimirPalaras();
-        
-        
-       System.out.println("Traduciendo una palabra");
-        
-        System.out.println("Voy a traducir House");
-        
-        System.out.println(diccionario.traducir("House"));
-        
-        
-        System.out.println("---------------------");
-        
-        System.out.println("Modificando palabra gato por perro");
-        
-        diccionario.modificarPalabras("Cat", "Perro");
-        
+
         diccionario.imprimirPalaras();
-       
+        System.out.println("------------------------");
+        System.out.println("Traduciendo una palabra");
+
+        System.out.println("Voy a traducir House");
+
+        System.out.println(diccionario.traducir("House"));
+
+        System.out.println("---------------------");
+
+        System.out.println("Modificando palabra gato por perro");
+
+        diccionario.modificarPalabras("Cat", "Perro");
+
+        diccionario.imprimirPalaras();
+
     }
 
 }

@@ -66,7 +66,8 @@ public class ejercicio19Avion {
         } while (opcionMenu != 4);
 
     }
-
+    //Para que una matriz empiece por uno, en el bucle for, en la i, cambiar el 0 por 1, al igual que cuado hago el metodo
+    //Para imprimirla tengo que cambiar el 0 por 1
     //Se va a crear la matriz, la cual sera todo String con la letra O,
     //que simboliza que esta libre el asiento y luego una `X`la cual indicara
     //qa que el asiento estara reservado
@@ -74,7 +75,7 @@ public class ejercicio19Avion {
     public static void rellenarMatriz(String[][] matrizPedir) {
         String[][] matrizRellenada = new String[25][4];
         String letra = "O";
-        for (int i = 0; i < matrizPedir.length; i++) {
+        for (int i = 1; i < matrizPedir.length; i++) {
 
             for (int j = 0; j < matrizPedir[i].length; j++) {
 
@@ -88,7 +89,7 @@ public class ejercicio19Avion {
         String[][] matrizRellenada = new String[25][4];//Declaro e inicio la matriz que se pasara por
         //El metodo
         String letra = "O";//String que tendra la matriz.
-        for (int i = 0; i < matrizRellenada.length; i++) {
+        for (int i = 1; i < matrizRellenada.length; i++) {
             //Recorro la matriz
             for (int j = 0; j < matrizRellenada[i].length; j++) {
 
@@ -101,7 +102,7 @@ public class ejercicio19Avion {
     public static String imprimirMatrizDelAvion(String[][] matrizPedir) {
 
         String matrizAsientos = "";//Declaro String como tipo de datos que contendra la Matriz
-        for (int i = 0; i < matrizPedir.length; i++) {
+        for (int i = 1; i < matrizPedir.length; i++) {
             //Dentro del for para recorrer las 2 parte, le meto la [i]
             for (int j = 0; j < matrizPedir[i].length; j++) {
                 
