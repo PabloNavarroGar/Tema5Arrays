@@ -15,7 +15,7 @@ import org.apache.commons.lang3.RandomStringUtils;
  *
  * @author pablo
  */
-public class ParteB {
+public class ParteBloteria {
 
     /**
      * @param args the command line arguments
@@ -25,7 +25,7 @@ public class ParteB {
 
         Map<String, Double> loteria = new HashMap<>();
        
-        Random random = new Random();
+        //Metodos
         rellenarMap(loteria);
 
 
@@ -34,11 +34,12 @@ public class ParteB {
         verPremio(loteria);
 
     }
-
+    //Le pasamos el Map en el parametro
     public static void verPremio(Map<String,Double>loteria) {
         System.out.println("Ingrese el número de décimo:");
         Scanner input = new Scanner(System.in);
-        String numero = input.nextLine();
+        String numero = input.nextLine();//Introducimos numero
+        //Llamamos a la loteria,contains y le enlazamos el la variable del numero
         if (loteria.containsKey(numero)) {
             System.out.println("El premio asociado al número " + numero + " es: " + loteria.get(numero));
         } else {
@@ -51,7 +52,7 @@ public class ParteB {
         Random random = new Random();
         for (int i = 0; i < 1000; i++) {
 
-            
+            //Relenamos la MAP 1000 veces en la i.
             
             String numero = RandomStringUtils.randomNumeric(5);
 
