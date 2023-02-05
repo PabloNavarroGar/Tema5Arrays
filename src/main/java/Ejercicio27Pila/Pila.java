@@ -14,66 +14,87 @@ import java.util.List;
 public class Pila<T> {
 
     protected List<T> lista;
+    private int tamanioPila;
 
-    public Pila(int tamanio) {
+    public Pila(int tamanioPila) {
         //Creo un constructor, el cual tiene un tamaño.
-        tamanio = Math.abs(tamanio);
-        this.lista = new ArrayList<>(tamanio);
+        tamanioPila = Math.abs(tamanioPila);
+        this.lista = new ArrayList<T>();
+        this.tamanioPila = tamanioPila;
     }
 
-    @Override
-    public String toString() {
-        String tmp = "";//declaracion string
-        //Foreach que le metemos el arraylist y luego le metmeos la lista
-        for (T t : this.lista) {
+    public void apilarPush(T elementos) {
+        //condicion si la lista de elementos es menor que el tamanio de la pila metes,
+        //si no sale mensaje
+        if (lista.size() < tamanioPila) {
+            lista.add(elementos);
 
-            //Lanzar una expecion
-            //Hacemos un tostring del objeto 'v' 
-            tmp += t.toString() + "\n";
+        } else {
 
+            System.out.println("Pila llena");
         }
-        return tmp;
+
     }
 
-    public int numeroElementosPila() {
+    public void desapilarPop(T elementos) {
 
-        return this.lista.size();
+        if (!lista.isEmpty()) {
+
+            elementos = lista.remove(lista.size() - 1);
+
+        } else {
+
+            System.out.println("Pila vacia");
+        }
+
     }
 
     public boolean estaVacia() {
 
-       return this.lista.isEmpty();
+        return lista.isEmpty();
     }
 
-    public int buscarElemento(T elemento) {
-        //T es el array list del Objeto
-        //Se le pasa el elemento como objeto, que esta ne el parametro
-        if (elemento != null) {
-            for (int i = 0; i < this.lista.size(); i++) {
-                if (this.lista.get(i) != null && elemento.equals(this.lista.get(i))) {
-                    return i;
-                }
+    public boolean estaLlena() {
+
+        return lista.size() == tamanioPila;
+    }
+
+    public int numeroElementosPila() {
+
+        return lista.size();
+    }
+
+    public void mostarElementos() {
+        //Mostar elementos de la 
+        for (int i = lista.size() - 1; i >= 0; i--) {
+            System.out.println(lista.get(i));
+
+        }
+    }
+    
+  
+  
+
+    public void rellenar(T[] array) {
+        int numeroMaxElementos = array.length;
+
+        if (numeroMaxElementos <= tamanioPila) {
+
+            for (int i = 0; i < numeroMaxElementos; i++) {
+
+                apilarPush(array[i]);
             }
+        } else {
+            System.out.println("El tamano del array es mayor que el de la pila");
         }
-        //Como no encuentra ese cliente devuelve -1
-        return -1;
-    }
-
-    public boolean borrarElementoPop(T elemento) {
-        //LLamo al metodo de buscar enlazandolo con una variable
-        int posicionVehiculoArray = buscarElemento(elemento);
-        //Si la posicion es mayor o iguala 0, pone el vehiculo en 0
-        if (posicionVehiculoArray >= 0) {
-            this.lista.remove(posicionVehiculoArray);
-            return true;
-        }
-
-        return false;
 
     }
 
-    public void anadirElementoPush(T elemento) {
-        this.lista.add(elemento);//Solo es una linea de comando.
+    public Object[] sacarElementos() {
+
+        Object[] elementos = this.lista.toArray();
+        this.lista.clear();
+        return elementos;
 
     }
 
