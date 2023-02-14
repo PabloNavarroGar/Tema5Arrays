@@ -37,20 +37,21 @@ public class MatrizAleatorios {
         Random random = new Random();
         int[][] matriz = new int [n][n];//Se crea con las mismas filas y columnas 
         int [] numeros = new int [n * n];//Creo un array que tiene el mismo tamaño que la matriz
-        
+        //multiplicado a si mismo para adaptar el tamaño de la matriz
         for (int i = 0; i < n*n; i++) {
             numeros[i] = i+1;
         } //Se recorre el array
         //Recorro y relleno la matriz
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                //Creo un int con el numero aleaotrio y entre los parentesis
-                //mancamos  N^2 y poenmos -i y restiamos a n j para que no se salgan
+                //Creo una variable  int con el numero aleaotrio y entre los parentesis
+                //mancamos  N^2 y poenmos -i y restiamos a n j para que no se salgan de la matriz
                 int numeroAleatorios = random.nextInt(n*n -i * n-j );
                 //Se pone esto para que no haya arrayboundexepction
                 //La matriz coge los numeros aleatorios del array
                 matriz[i][j] = numeros[numeroAleatorios];
                 //Esto hace que NO se repitan esos numeros aleatorios
+                //por cada vez que se repita el for
                 numeros[numeroAleatorios] = numeros[n*n -i * n-j -1];
                 
             }
