@@ -94,7 +94,7 @@ public class Pila<T> {
         }
 
     }
-
+    //Objetc
     public Object[] sacarElementos() {
         
         Object[] elementos = this.lista.toArray();

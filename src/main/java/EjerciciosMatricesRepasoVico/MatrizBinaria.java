@@ -25,7 +25,7 @@ public class MatrizBinaria {
         int[] resultado = encontrarCasilla(matriz);
         if(resultado !=null){
             
-            System.out.println("El primero cero esta esta en (" + resultado[0] +", " + resultado[1] + ") ");
+            System.out.println("El primer cero esta esta en (" + resultado[0] +", " + resultado[1] + ") ");
         }else{
             
             System.out.println("No hay zeros en las esquinas");
